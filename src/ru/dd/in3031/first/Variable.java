@@ -1,26 +1,25 @@
 package ru.dd.in3031.first;
 
-import java.util.ArrayList;
+
+import java.util.HashSet;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Set;
 
 public class Variable {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String cnt = sc.next();
-
-
         char[] strToArray = cnt.toCharArray();
+        Set<Object> mass2 = new HashSet<>();
+        int kolvo = 0;
         for (int i = 0; i < strToArray.length; i++) {
-            strToArray.equals(cnt);
-            System.out.print(cnt);
+            for (int j = i + 1; j < strToArray.length; j++) {
+                if (strToArray[i] == strToArray[j]) {
+                    mass2.add(strToArray[j]);
+                    kolvo++;
+                }
+            }
         }
 
-//        Pattern pattern = Pattern.compile("t(.)");
-//        Matcher matcher = pattern.matcher(cnt);
-//        while (matcher.find()) {
-//            System.out.println(matcher.group());
-//        }
     }
 }
